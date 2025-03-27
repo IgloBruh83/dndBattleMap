@@ -1,11 +1,8 @@
-from random import randint
 from tkinter import *
-from Map import Map
-from MenuBar import MenuBar
-from Clock import Clock
+from Modules.Map import Map
+from Modules.MenuBar import MenuBar
+from Modules.Clock import Clock
 from Bestiary import *
-from PIL import Image, ImageTk
-
 
 ## APPLICATION MAIN WINDOW
 root = Tk()

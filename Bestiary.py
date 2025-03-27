@@ -1,6 +1,6 @@
-from Unit import Unit
+from Modules.Unit import Unit
 from random import randint
-from Misc import Roll
+from Modules.Misc import Roll
 
 
 class Goblin (Unit):
