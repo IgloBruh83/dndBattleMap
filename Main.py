@@ -152,7 +152,7 @@ def NextUnit():
         currentUnit = 0; lastActiveUnit = -1
     UpdateMoveorder()
 
-def AddUnit(unit, scaleX=1, scaleY=1):
+def AddUnit(unit, scaleX=1.0, scaleY=1.0):
     global units; global playerNames
     if unit in globals():
         units.append(globals()[unit](c, [scaleX, scaleY]))
@@ -295,9 +295,9 @@ ins.bind('<Return>', ComlaneExecute)
 
 
 ### DEBUG
-AddUnit("Ustalost")
-AddUnit("Mzhuka")
-AddUnit("Glurp")
+AddUnit("Ustalost", 1.2, 1.2)
+AddUnit("Mzhuka", 1.2, 1.2)
+AddUnit("Glurp", 1.2, 1.2)
 
 
 

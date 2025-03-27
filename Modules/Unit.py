@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 
 
 class Unit:
-    def __init__(self, canvas, image_path, icon_path, scaleX=1, scaleY=1):
+    def __init__(self, canvas, image_path, icon_path, scaleX=1.0, scaleY=1.0):
         # Default values for empty unit -> OVERRIDE
         self.name = '#name'
         self.team = 'Neutral'

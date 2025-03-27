@@ -271,7 +271,7 @@ class Mzhuka (Unit):
 class Glurp (Unit):
     def __init__(self, canvas, scale):
         super().__init__(canvas, 'UnitGraphics/PLAYER2.png', 'UnitGraphics/PLAYER2.png', scale[0], scale[1])
-        self.devScale = 0.35
+        self.devScale = 0.28
         self.name = 'Glurp'
         self.team = 'Party'
         self.maxhp = 30; self.hp = self.maxhp
@@ -285,7 +285,7 @@ class Glurp (Unit):
 class Ustalost (Unit):
     def __init__(self, canvas, scale):
         super().__init__(canvas, 'UnitGraphics/PLAYER3.png', 'UnitGraphics/PLAYER3.png', scale[0], scale[1])
-        self.devScale = 0.35
+        self.devScale = 0.28
         self.name = 'Ustalost'
         self.team = 'Party'
         self.maxhp = 27; self.hp = self.maxhp
@@ -296,19 +296,6 @@ class Ustalost (Unit):
         self.initiative = randint(1, 20) + self.sb['DEX']//2-5 + self.initBonus
         self.RenderUnit()
 
-class Valyana (Unit):
-    def __init__(self, canvas, scale):
-        super().__init__(canvas, 'UnitGraphics/PLAYER4.png', 'UnitGraphics/PLAYER4.png', scale[0], scale[1])
-        self.devScale = 0.35
-        self.name = 'Valyana'
-        self.team = 'Party'
-        self.maxhp = 20; self.hp = self.maxhp
-        self.sb = {'STR': 12, 'DEX': 12, 'CON': 12, 'INT': 13, 'WIS': 18, 'CHA': 18}
-        self.armorClass = 11
-
-        # Automatic part
-        self.initiative = randint(1, 20) + self.sb['DEX'] // 2 - 5 + self.initBonus
-        self.RenderUnit()
 
 class Nacho (Unit):
     def __init__(self, canvas, scale):
@@ -352,6 +339,45 @@ class SoulDemon (Unit):
         self.maxhp = 250; self.hp = self.maxhp
         self.sb = {'STR': 14, 'DEX': 24, 'CON': 14 , 'INT': 16, 'WIS': 13, 'CHA': 7}
         self.armorClass = 19
+
+        # Automatic part
+        self.initiative = randint(1, 20) + self.sb['DEX'] // 2 - 5 + self.initBonus
+        self.RenderUnit()
+
+class DesertRogue (Unit):
+    def __init__(self, canvas, scale):
+        super().__init__(canvas, 'UnitGraphics/DesertRogue_Unit.png', 'UnitGraphics/DesertRogue_Icon.png', scale[0], scale[1])
+        self.devScale = 0.3
+        self.name = 'Rogue of Desert'
+        self.maxhp = 100; self.hp = self.maxhp
+        self.sb = {'STR': 9, 'DEX': 20, 'CON': 13 , 'INT': 11, 'WIS': 14, 'CHA': 13}
+        self.armorClass = 18
+
+        # Automatic part
+        self.initiative = randint(1, 20) + self.sb['DEX'] // 2 - 5 + self.initBonus
+        self.RenderUnit()
+
+class DesertBandit (Unit):
+    def __init__(self, canvas, scale):
+        super().__init__(canvas, 'UnitGraphics/DesertBandit_Unit.png', 'UnitGraphics/DesertBandit_Icon.png', scale[0], scale[1])
+        self.devScale = 0.2
+        self.name = 'Desert Bandit'
+        self.maxhp = Roll('8d8'); self.hp = self.maxhp
+        self.sb = {'STR': 8, 'DEX': 17, 'CON': 12 , 'INT': 9, 'WIS': 14, 'CHA': 10}
+        self.armorClass = 17
+
+        # Automatic part
+        self.initiative = randint(1, 20) + self.sb['DEX'] // 2 - 5 + self.initBonus
+        self.RenderUnit()
+
+class DesertBulkBandit (Unit):
+    def __init__(self, canvas, scale):
+        super().__init__(canvas, 'UnitGraphics/BulkDesertBandit_Unit.png', 'UnitGraphics/BulkDesertBandit_Icon.png', scale[0], scale[1])
+        self.devScale = 0.24
+        self.name = 'Desert Bulk Bandit'
+        self.maxhp = Roll('8d8'); self.hp = self.maxhp
+        self.sb = {'STR': 24, 'DEX': 13, 'CON': 12 , 'INT': 9, 'WIS': 14, 'CHA': 10}
+        self.armorClass = 17
 
         # Automatic part
         self.initiative = randint(1, 20) + self.sb['DEX'] // 2 - 5 + self.initBonus
